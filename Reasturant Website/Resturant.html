@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nilesh's Resturant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/> 
+    <style>
+        body {
+            font-family: cursive;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color:transparent;
+            color: black;
+            padding: 10px 20px;
+            position: relative;
+        }
+
+        .navbar .contact-info {
+            font-size: 1rem;
+        }
+
+        .navbar .shop-name {
+            font-size: 40px;
+            font-weight: bold;
+            font-family: Segoe Script;
+            padding-left: 70px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .navbar .social-media {
+            font-size: 1.1rem;
+        }
+
+        .navbar .social-media a {
+            color: black;
+            margin: 0 10px;
+            text-decoration: none;
+
+        }
+
+        .nav-menu {
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+            padding: 10px 0;
+            justify-content: space-evenly;
+        }
+        nav-menu:hover{
+            text-shadow: purple;
+
+        }
+
+        .nav-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        .nav-menu ul li {
+            margin: 0 15px;
+        }
+
+        .nav-menu ul li a {
+            color: grey;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .nav-menu ul li a:hover {
+            text-decoration: underline;
+            color: black;
+        }
+        .background-section {
+            position: relative;
+            background: url('restaurant5.jpg') no-repeat center center/cover;
+            margin-top: 1%;
+            height: 400px; /* Adjust as needed */
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .background-section h1 {
+            color: white;
+            position: absolute;
+            font-family: Segoe Script;
+            top: 70px; /* Distance from the top */
+            left: 30%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            margin: 0;
+            padding: 0 20px; /* Optional: add padding to ensure text readability */
+            /*background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for readability */
+            border-radius: 5px; /* Optional: rounded corners for the background */
+            
+        }
+        .background-section p{
+            color: white;
+            position: absolute;
+            top: 170px; /* Distance from the top */
+            left: 30%;
+            transform: translateX(-50%);
+            font-size: 2 rem;
+            margin: 0;
+            padding: 0 20px; /* Optional: add padding to ensure text readability */
+            /*background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for readability */
+            border-radius: 5px; /* Optional: rounded corners for the background */
+
+        }
+        .background-section a{
+            display: inline-block;
+            margin-top: 10%;
+            margin-right: 40%;
+            padding: 10px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: lightcoral;
+            border: none;
+            border-radius: 5px;
+            /*text-align: center;*/
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .background-section a:hover{
+            background-color: darkcyan;
+            transform: scale(1.05);
+        }
+         .welcome-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 50px 20px;
+            background-image: url('bakery-background.jpg'); /* Replace with your background image */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: black;
+        }
+
+        .welcome-section h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-family: Segoe Script;
+            
+            
+        }
+
+        .welcome-section p {
+            font-size: 2 rem;
+            max-width: 800px;
+            line-height: 1.6;
+            font-size: 2 rem;
+            margin-top:05px;
+            color: gray;
+            
+        }
+        .products-section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .products-section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: black;
+            font-family: Segoe Script;
+        }
+
+        .products-section p {
+            font-size: 2 rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: gray;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .product-card a{
+            display: inline-block;
+            margin-top: 0%;
+            margin-right: 0%;
+            padding: 10px 25px;
+            font-size: 14px;
+            font-weight: bold;
+            color: white;
+            background-color: lightcoral;
+            border: none;
+            border-radius: 5px;
+            /*text-align: center;*/
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .product-card a:hover{
+            background-color: darkcyan;
+            transform: scale(1.05);
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 40%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            margin-top: 15px;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            font-size: 1.2rem;
+            color: #ff6600;
+        }
+        .background-section1 {
+            position: relative;
+            background: url('cake19.jpg') no-repeat center center/cover;
+            margin-top: 1%;
+            height: 400px; /* Adjust as needed */
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .background-section1 h1 {
+            color: white;
+            position: absolute;
+            font-family: Segoe Script;
+            top: 80px; /* Distance from the top */
+            left: 55%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            margin: 0;
+            padding: 0 20px; /* Optional: add padding to ensure text readability */
+            /*background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for readability */
+            border-radius: 5px; /* Optional: rounded corners for the background */
+            
+        }
+        .background-section1 p{
+            color: white;
+            position: absolute;
+            top: 220px; /* Distance from the top */
+            left: 55%;
+            transform: translateX(-50%);
+            font-size: 2 rem;
+            margin: 0;
+            padding: 0 px; /* Optional: add padding to ensure text readability */
+            /*background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for readability */
+            border-radius: 5px; /* Optional: rounded corners for the background */
+
+        }
+        .background-section1 a{
+            display: inline-block;
+            margin-top: 19%;
+            margin-left: 10%;
+            padding: 10px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: darkcyan;
+            border: none;
+            border-radius: 5px;
+            /*text-align: center;*/
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .background-section1 a:hover{
+            background-color: black;
+            transform: scale(1.05);
+        }
+        .content-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .content-section .image-container {
+            flex: 1;
+            padding-right: 20px;
+            overflow: hidden;
+            /* Apply slide-in animation to the image */
+            animation: slideInFromRight 2s ease-out forwards;
+            overflow: hidden;
+        }
+
+        @keyframes slideInFromRight{
+            from {
+                transform: translateX(0);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(20%);
+                opacity: 1;
+            }
+        }
+
+        .content-section .image-container img {
+            width: 68%;
+            margin-left: 20px;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .content-section .image-container img:hover {
+            transform: scale(1.1);
+        }
+
+        .content-section .text-container {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .text-container h2 {
+            font-size: 2rem;
+            color: black;
+            margin-bottom: 20px;
+            font-family: Segoe Script;
+        }
+
+        .text-container p {
+            font-size: 2 rem;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: gray;
+        }
+        .text-container a{
+            display: inline-block;
+            margin-top: 0%;
+            margin-left: 0%;
+            padding: 10px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: lightcoral;
+            border: none;
+            border-radius: 5px;
+            /*text-align: center;*/
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .text-container a:hover{
+            background-color: black;
+            transform: scale(1.05);
+        }
+
+        .content-section1 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 50px 20px;
+        }
+
+        .content-section1 .text-container1 {
+            flex: 1;
+            padding-right: 20px;
+        }
+
+        .text-container1 h2 {
+            font-size: 2rem;
+            margin-left: 20%;
+            color: black;
+            margin-bottom: 20px;
+            font-family: Segoe Script;
+        }
+
+        .text-container1 p {
+            font-size: 2 rem;
+            margin-left: 20%;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            color: gray;
+        }
+        .text-container1 a{
+            display: inline-block;
+            margin-top: 0%;
+            margin-left: 20%;
+            padding: 10px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: lightcoral;
+            border: none;
+            border-radius: 5px;
+            /*text-align: center;*/
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer;
+        }
+        .text-container1 a:hover{
+            background-color: black;
+            transform: scale(1.05);
+        }
+
+        .content-section1 .image-container1 {
+            flex: 1;
+            padding-left: 20px;
+            overflow: hidden;
+            /* Apply slide-in animation to the image */
+            animation: slideInFromLeft 2s ease-out forwards;
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                transform: translateX(50%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .content-section1 .image-container1 img {
+            width: 80%;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .content-section1 .image-container1 img:hover {
+            transform: scale(1.1);
+        }
+        .testimonials-section {
+            background-color: #fff;
+            padding: 50px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+            margin: 20px auto;
+            max-width: 1200px;
+            border-radius: 10px;
+        }
+
+        .testimonials-section h2 {
+            font-size: 2rem;
+            margin-left: 0%;
+            color: black;
+            margin-bottom: 20px;
+            font-family: Segoe Script;
+        }
+
+        .testimonials-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .testimonial-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0.3, 0.3, 0.3, 0.3);
+            padding: 20px;
+            max-width: 350px;
+            flex: 1;
+            text-align: left;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideIn 0.6s forwards ease-in-out;
+        }
+
+        /* Animating the entrance of each testimonial */
+        .testimonial-card:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+
+        .testimonial-card:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+
+        .testimonial-card:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        /* Keyframes for the slide-in effect */
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateY(20%);
+            }
+        }
+
+        .testimonial-card p {
+            font-size: 1rem;
+            color: #666;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        .testimonial-card .name {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #333;
+            text-align: right;
+        }
+        .recipe-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0);
+            border-radius: 10px;
+            padding: 40px;
+        }
+
+        .recipe-section h2 {
+            font-size: 2rem;
+            margin-left: 40%;
+            color: black;
+            font-family: Segoe Script;
+        }
+
+        .recipe-section p {
+            font-size: 1.2rem;
+            color: #555;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .recipe-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .recipe-content .image-container2 {
+            flex: 2;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .recipe-content img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+        }
+
+        .recipe-content .text-container2 {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .recipe-content .text-container2 .recipe-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .recipe-content .text-container2 .recipe-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.5s ease;
+
+        }
+
+        .recipe-content .text-container2 .recipe-item h3 {
+            font-size: 1.1rem;
+            color: #333;
+            margin: 0;
+        }
+
+        .recipe-content .text-container2 .recipe-item p {
+            color: #777;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+        .recipe-content .text-container2 a {
+            color: #007bff;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .recipe-content .text-container2 a,img:hover {
+            text-decoration: underline;
+            transform: scale(1.1);
+        }
+        .background-section2 {
+            position: relative;
+            background: url('cake19.jpg') no-repeat center center/cover;
+            margin-top: 1%;
+            height: 400px; /* Adjust as needed */
+            color: white;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .background-section2 h1 {
+            color: white;
+            position: absolute;
+            font-family: Segoe Script;
+            top: 100px; /* Distance from the top */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            margin: 0;
+            padding: 0 20px; /* Optional: add padding to ensure text readability */
+            /*background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for readability */
+            border-radius: 5px; /* Optional: rounded corners for the background */
+            
+        }
+        .background-section2 p{
+            color: white;
+            position: absolute;
+            top: 180px; /* Distance from the top */
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2 rem;
+            margin: 0;
+            padding: 0 px; /* Optional: add padding to ensure text readability */
+            /*background: rgba(0, 0, 0, 0.5); /* Optional: semi-transparent background for readability */
+            border-radius: 5px; /* Optional: rounded corners for the background */
+
+        }
+
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 100px;
+        }
+
+        .newsletter-form input[type="email"] {
+            flex: 1;
+            padding: 15px;
+            border: none;
+            outline: none;
+            font-size: 16px;
+        }
+
+        .newsletter-form button {
+            padding: 0 30px;
+            border: none;
+            background-color: #e94e32;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #cf3e22;
+        }
+        .footer {
+            background-color: transparent;
+            color: gray;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-family: 'Brush Script MT', cursive;
+            font-size: 36px;
+            color: black;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-nav {
+            margin-bottom: 30px;
+        }
+
+        .footer-nav a {
+            color: gray;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .footer-social {
+            margin-bottom: 20px;
+        }
+
+        .footer-social a {
+            color: gray;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: black;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-copy {
+            font-size: 14px;
+            color: black;
+        }
+            
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="contact-info">
+                <span><i class="fa-solid fa-phone"></i><a href="(123) 456-7890">(123) 456-7890</a></span>
+            </div>
+            <div class="shop-name">
+                Nilesh's Restaurant
+            </div>
+            <div class="social-media">
+                <a href="#" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-square-instagram"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+        </div>
+        <hr>
+        <div class="nav-menu">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    <section id="home" class="background-section">
+        <h1>Welcome to Nilesh's Restaurant</h1>
+        <p>Our skilled restaurant use only the finest ingredients,<br> ensuring that each creation is a testament to the excetional standards we uphold.</p>
+        <a href="#shop"><i class="fa-solid fa-cart-shopping"></i> Order Now</a>
+    </section>
+     <section id="about" class="welcome-section">
+        <h1>Welcome to Restaurant</h1>
+        <p>
+            Our artisanal restaurant is dedicated to crafting delectable treats that delight the senses and leave a lasting impression.
+            Explore a world of exquisite flavors and impeccable craftsmanship as we invite you to experience the essence of fine baking.
+        </p>
+    </section>
+    <section id="menu" class="products-section">
+        <h2>Menu
+        </h2>
+        <p>Indulge your taste buds with our diverse range of freshly baked goods</p>
+        <div class="products-grid">
+            <div class="product-card">
+                <img src="pasta.jpg" alt="Black Forest Pastry">
+                <div class="product-info">
+                    <h3>Pasta</h3>
+                    <p>$12</p>
+                    <a href="#shop"><i class="fa-solid fa-cart-shopping"></i> Order Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="salad.jpg" alt="Sprinkled Donuts">
+                <div class="product-info">
+                    <h3>salad</h3>
+                    <p>$12</p>
+                    <a href="#shop"><i class="fa-solid fa-cart-shopping"></i> Order Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="steak.jpg" alt="Black Forest Cupcake">
+                <div class="product-info">
+                    <h3>steak</h3>
+                    <p>$12</p>
+                    <a href="#shop"><i class="fa-solid fa-cart-shopping"></i> Order Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="restaurant6.jpg" alt="Macarons with Berries">
+                <div class="product-info">
+                    <h3>Noodles</h3>
+                    <p>$12</p>
+                    <a href="#shop"><i class="fa-solid fa-cart-shopping"></i> Order Now</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="restaurant7.jpg" alt="Macarons with Berries">
+                <div class="product-info">
+                    <h3>Pulao</h3>
+                    <p>$12</p>
+                    <a href="#shop"><i class="fa-solid fa-cart-shopping"></i> Order Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="background-section1">
+        <h1>Celebrate life's special moments with our Restaurant</h1>
+        <p>All of our products are made from scratch using family recipes with the highest quality ingredients. We bake and sell fresh daily to ensure only the best products are sold to our customers.</p>
+        <a href="#shop"><i class="fa-solid fa-cart-shopping"></i> Order Now</a>
+    </section>
+     <section class="content-section">
+        <div class="image-container">
+            <img src="restaurant9.jpg" alt="Cake Image">
+        </div>
+        <div class="text-container">
+            <h2>Visit Us</h2>
+            <p>
+                Immerse yourself in the aroma of freshly baked delights by visiting our location. <br>Our welcoming atmosphere and friendly staff create a delightful experience for <br>every customer. Discover the perfect treat to satisfy your cravings or pick up a<br> thoughtful gift for a loved one.
+            </p>
+            <a href="#shop"><i class="fa-solid fa-cart-shopping"></i> Order Now</a>
+        </div>
+    </section>
+    <section class="content-section1">
+        <div class="text-container1">
+            <h2>Delicious Food for Every Occasion</h2>
+            <p>
+                Indulge in our wide selection of Food, each crafted with love and the finest ingredients.
+                Whether it's a birthday, wedding, or any special event, our Food are sure to impress and satisfy.
+                Enjoy the perfect balance of flavors and textures with every bite.
+            </p>
+            <a href="#shop"><i class="fa-solid fa-cart-shopping"></i> Order Now</a>
+        </div>
+        <div class="image-container1">
+            <img src="restaurant10.jpg" alt="Cake Image">
+        </div>
+    </section>
+    <div class="testimonials-section">
+    <h2>Testimonials</h2>
+    <div class="testimonials-container">
+        <div class="testimonial-card">
+            <p>"Delicious Food and impeccable service! Our go-to Restaurant for every occasion."</p>
+            <div class="name">-Nilesh P.</div>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"The custom designs exceeded our expectations, and the taste was simply divine!"</p>
+            <div class="name">-Ankit K.</div>
+        </div>
+
+        <div class="testimonial-card">
+            <p>"A delightful experience from start to finish – the flavors, the presentation, everything was perfect!"</p>
+            <div class="name">-Nishant G.</div>
+        </div>
+    </div>
+</div>
+<div id="recipe" class="recipe-section">
+    <h2>Our Recipes</h2>
+    <p>Behind the Scenes: A Day in the Life of a Food Restaurant</p>
+
+    <div class="recipe-content">
+        <div class="image-container2">
+            <img src="restaurant17.jpg" alt="Main Cake Image">
+            <p>A Delightful lemon grape flavor that paired well with my go-to berry blend</p>
+        </div>
+        <div class="text-container2">
+            <div class="recipe-item">
+                <img src="restaurant12.jpg" alt="Cake Image 1">
+                <div>
+                    <h3>Fast Food recipes</h3>
+                    <a href="https://copykat.com/category/copycat-restaurant-recipes/fast-food/">Quick bites, big flavors.Fast food made fresh, just for you</a>
+                </div>
+            </div>
+            <div class="recipe-item">
+                <img src="restaurant13.jpg" alt="Cake Image 2">
+                <div>
+                    <h3>Soup recipes</h3>
+                    <a href="https://copykat.com/category/soups/" >Warm, comforting, and full of flavor.Dive into a bowl of our delicious soups</a>
+                </div>
+            </div>
+            <div class="recipe-item">
+                <img src="restaurant11.jpg" alt="Cake Image 3">
+                <div>
+                    <h3>Salad recipes</h3>
+                    <a href="https://copykat.com/category/salads/">Fresh, crisp, and bursting with vibrant flavors.Savor the goodness of our wholesome salads</a>
+                </div>
+            </div>
+            <div class="recipe-item">
+                <img src="restaurant14.jpg" alt="Cake Image 4">
+                <div>
+                    <h3>Chinese recipes</h3>
+                    <a href="https://copykat.com/category/cuisine/chinese-food/">Satisfy your cravings with bold, authentic Chinese flavors.From savory stir-fries to delicate dumplings, experience the taste of tradition</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <section id="contact" class="background-section2">
+        <h1>Join Our Newsletter</h1>
+        <p>Sign Up for our newsletter and never miss any offers.</p>
+        
+        <form class="newsletter-form">
+            <input type="email" placeholder="Your Email Address" required>
+            <button type="submit">SIGN UP</button>
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="footer-logo">Nilesh's Restaurant</div>
+        
+        <div class="footer-nav">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Recipes</a>
+            <a href="#">Contact</a>
+        </div>
+        
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+        
+        <div class="footer-copy">
+            &copy; 2024 Nilesh's Restaurant. All Rights Reserved.
+        </div>
+    </footer>
+    <script type="text/javascript">
+        // Smooth scroll for navigation menu
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Handle newsletter form submission
+document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const emailInput = document.querySelector('.newsletter-form input[type="email"]');
+    const emailValue = emailInput.value.trim();
+
+    // Validate email (basic validation)
+    if (validateEmail(emailValue)) {
+        alert('Thank you for signing up!');
+        emailInput.value = ''; // Reset the input field
+    } else {
+        alert('Please enter a valid email address.');
+    }
+});
+
+// Email validation function
+function validateEmail(email) {
+    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+}
+
+// Cart button click event for product cards
+document.querySelectorAll('.product-card a').forEach(button => {
+    button.addEventListener('click', function() {
+        alert('Item added to the cart!');
+    });
+});
+
+// Testimonials section - Add animation on scroll (optional)
+const testimonialCards = document.querySelectorAll('.testimonial-card');
+window.addEventListener('scroll', function() {
+    testimonialCards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            card.classList.add('visible');
+        } else {
+            card.classList.remove('visible');
+        }
+    });
+});
+
+// Function to highlight the active menu link on scroll
+const sections = document.querySelectorAll('section');
+const navLinks = document.querySelectorAll('.nav-menu ul li a');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        if (pageYOffset >= sectionTop - sectionHeight / 3) {
+            current = section.getAttribute('id');
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+        }
+    });
+});
+
+    </script>
+
+
+
+
+</body>
+</html>
